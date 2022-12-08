@@ -32,7 +32,7 @@ public class splashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 if (onbchecker == null) {
-                    startActivity(new Intent(splashScreen.this, loginAsk.class));
+                    startActivity(new Intent(splashScreen.this, onBoarding.class));
                     finish();
                 } else if (onbchecker.equals("yes")) {
                     //open Login
@@ -40,7 +40,7 @@ public class splashScreen extends AppCompatActivity {
                     finish();
                 } else if (onbchecker != "yes" && !onbchecker.equals(null)) {
                     //open Login
-                    startActivity(new Intent(splashScreen.this, loginAsk.class));
+                    startActivity(new Intent(splashScreen.this, onBoarding.class));
                     finish();
                 }
 

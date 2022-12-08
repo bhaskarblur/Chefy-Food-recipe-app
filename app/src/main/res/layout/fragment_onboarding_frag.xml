@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@null"
-    tools:context=".onboarding_frag">
+    android:background="@null">
 
     <ImageView
         android:id="@+id/splashPattern2"
@@ -17,12 +16,13 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/onbheadtxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.429"
         app:srcCompat="@drawable/ic_onboard_pattern" />
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/onbimg"
         android:layout_width="match_parent"
         android:layout_height="385dp"
@@ -33,13 +33,15 @@
         android:paddingLeft="12dp"
         android:paddingTop="50dp"
         android:paddingRight="12dp"
-        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/onbheadtxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_illustration1" />
+        app:lottie_autoPlay="true"
+        app:lottie_repeatCount="10"
+        app:id="@+id/onboardingLottie"
+        app:lottie_rawRes="@raw/onboarding2"></com.airbnb.lottie.LottieAnimationView>
 
     <TextView
         android:id="@+id/onbheadtxt"
@@ -63,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="135dp"
+        android:layout_marginBottom="40dp"
         android:fontFamily="@font/montserrat"
         android:letterSpacing="0.02"
         android:lineSpacingExtra="5dp"
@@ -77,6 +79,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/skipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:text="Skip"
+        android:textColor="#332C5E"
+        android:textSize="16.5sp"
+        app:fontFamily="@font/montserrat_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
