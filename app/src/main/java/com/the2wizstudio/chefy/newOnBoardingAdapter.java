@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -28,8 +29,10 @@ public class newOnBoardingAdapter extends RecyclerView.Adapter<newOnBoardingAdap
 
     ArrayList<onBoardingItem> onBoardingItemArrayList=new ArrayList<>();
     Context context;
-    public newOnBoardingAdapter(Context context) {
+    ViewPager2 viewPager;
+    public newOnBoardingAdapter(Context context,ViewPager2 viewPager) {
         this.context=context;
+        this.viewPager=viewPager;
         onBoardingItemArrayList.add(new onBoardingItem(R.drawable.ic_illustration1,"All recipe you need",
                 "5000+ healthy recipes made by people for your healthy life"));
         onBoardingItemArrayList.add(new onBoardingItem(R.drawable.ic_illustration2,"Order ingredients",
@@ -48,9 +51,25 @@ public class newOnBoardingAdapter extends RecyclerView.Adapter<newOnBoardingAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         onBoardingItem onBoardingItem=onBoardingItemArrayList.get(position);
-        holder.illustration.setImageResource(onBoardingItem.getImageId());
+        //holder.illustration.setImageResource(onBoardingItem.getImageId());
         holder.headText.setText(onBoardingItem.getHeadText());
         holder.subText.setText(onBoardingItem.getSubText());
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                if(position==0) {
+                    holder.animView.setAnimation(R.raw.onboarding1);
+                }
+                else if(position==1) {
+                    holder.animView.setAnimation(R.raw.onboarding2);
+                }
+                else if(position==2) {
+                    holder.animView.setAnimation(R.raw.onboarding3);
+                }
+                holder.animView.resumeAnimation();
+            }
+        });
 
         holder.skipText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +97,7 @@ public class newOnBoardingAdapter extends RecyclerView.Adapter<newOnBoardingAdap
         LottieAnimationView animView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            illustration=itemView.findViewById(R.id.onbimg);
+          //  illustration=itemView.findViewById(R.id.onbimg);
             headText=itemView.findViewById(R.id.onbheadtxt);
             subText=itemView.findViewById(R.id.onbsubtxt);
             skipText=itemView.findViewById(R.id.skipText);

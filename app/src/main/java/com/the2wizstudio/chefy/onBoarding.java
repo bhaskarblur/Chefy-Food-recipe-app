@@ -34,7 +34,7 @@ public class onBoarding extends AppCompatActivity {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.backgroundGreen));
         }
-        newOnBoardingAdapter adapter=new newOnBoardingAdapter(this);
+        newOnBoardingAdapter adapter=new newOnBoardingAdapter(this,onbinding.viewpager);
 
         onbinding.viewpager.setAdapter(adapter);
         onbinding.viewpager.setClipToPadding(false);
