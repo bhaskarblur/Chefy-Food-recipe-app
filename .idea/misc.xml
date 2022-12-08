@@ -15,6 +15,14 @@
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1385" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1385" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/mipmap-mdpi/ic_logo.xml" value="0.2875" />
+        <entry key="app/src/main/res/drawable/ic_illustration1.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/ic_onboard_notselected.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/onboarding_button.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/onboarding_card.xml" value="0.2195" />
+        <entry key="app/src/main/res/layout/activity_login_ask.xml" value="0.22628479003906254" />
+        <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.6750762939453125" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.20008550662676358" />
+        <entry key="app/src/main/res/layout/fragment_onboarding_frag.xml" value="0.23016510009765628" />
       </map>
     </option>
   </component>
@@ -23,5 +31,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.24265289306640628" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -3,13 +3,15 @@ package com.the2wizstudio.chefy;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
+import android.window.SplashScreen;
 
 public class splashScreen extends AppCompatActivity {
-
+    private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,16 +24,32 @@ public class splashScreen extends AppCompatActivity {
     }
 
     private void skipSplash() {
-        // this will skip the splashScreen
+
+        sharedPreferences = getSharedPreferences("onbdone", 0);
+        String onbchecker = sharedPreferences.getString("onbdone", "");
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(splashScreen.this,onBoarding.class);
-                startActivity(intent);
-                finish();
+                if (onbchecker == null) {
+                    startActivity(new Intent(splashScreen.this, loginAsk.class));
+                    finish();
+                } else if (onbchecker.equals("yes")) {
+                    //open Login
+                    startActivity(new Intent(splashScreen.this, loginAsk.class));
+                    finish();
+                } else if (onbchecker != "yes" && !onbchecker.equals(null)) {
+                    //open Login
+                    startActivity(new Intent(splashScreen.this, loginAsk.class));
+                    finish();
+                }
+
+
             }
-        },1500);
+
+        }, 1500);
     }
+        // this will skip the splashScreen
 
     @Override
     public void finish() {
