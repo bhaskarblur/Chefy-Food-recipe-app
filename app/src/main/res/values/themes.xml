@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Chefy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/textWhite</item>
+        <item name="colorPrimaryVariant">@color/textWhite</item>
+        <item name="colorOnPrimary">@color/textWhite</item>
+        <!-- Secondary brand color. -->
+        <item name="android:textColorPrimaryInverse">#E9EDEB</item>
+        <item name="android:textColorSecondary">@color/textGrey</item>
+        <item name="android:textColorPrimary">@color/textBlack</item>
+        <item name="colorSecondaryVariant">@color/textGrey</item>
+        <item name="colorOnSecondary">@color/textBlack</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/backgroundGreen</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#fdfdfd</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="boxStrokeWidth">0.8dp</item>
+    </style>
+</resources>

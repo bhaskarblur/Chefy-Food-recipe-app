@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.the2wizstudio.chefy"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        buildFeatures {
+            viewBinding true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    //implementation 'me.bendik.simplerangeview:simplerangeview:0.2.0'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.firebase:firebase-messaging-directboot:23.1.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //implementation 'com.theartofdev.edmodo:android-image-cropper:2.8+'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'// compulsory
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //for retrofit conversion
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'jp.wasabeef:picasso-transformations:2.4.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    // Retrofit & OkHttp
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.4'
+    implementation 'com.google.firebase:firebase-analytics:19.0.2'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.2'
+    def lifecycle_version = "2.5.1"
+    def arch_version = "2.1.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    //noinspection GradleDependency
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    implementation 'androidx.core:core:1.9.0'
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
+}
