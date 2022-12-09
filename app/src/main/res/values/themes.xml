@@ -26,5 +26,6 @@
     </style>
     <style name="TextInputLayoutStyle2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="boxStrokeErrorColor">#F1301F</item>
     </style>
 </resources>
