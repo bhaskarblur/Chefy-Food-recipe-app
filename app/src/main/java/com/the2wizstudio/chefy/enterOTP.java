@@ -152,6 +152,9 @@ public class enterOTP extends AppCompatActivity {
         else if(binding.otpbox1.isFocused()) {
            finish();
         }
+        else{
+            finish();
+        }
 
     }
 
