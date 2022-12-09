@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".enterOTP">
+    tools:context=".enterOTP"
+    android:background="@color/white">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -22,10 +23,10 @@
 
             <ImageView
                 android:id="@+id/back_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="29dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_icon_back" />
