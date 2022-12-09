@@ -32,9 +32,9 @@ public class onBoarding extends AppCompatActivity {
         setContentView(onbinding.getRoot());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.backgroundGreen, this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.white, this.getTheme()));
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.backgroundGreen));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         }
         newOnBoardingAdapter adapter=new newOnBoardingAdapter(this,onbinding.viewpager);
 

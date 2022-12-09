@@ -8,18 +8,18 @@
 
     <ImageView
         android:id="@+id/splashPattern2"
-        android:layout_width="570dp"
-        android:layout_height="600dp"
-        android:layout_marginStart="100dp"
+        android:layout_width="580dp"
+        android:layout_height="540dp"
         android:layout_marginBottom="200dp"
-        android:alpha="0.8"
+        android:alpha="0.6"
+        android:paddingBottom="60dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/onbheadtxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_onboard_pattern" />
 
     <com.airbnb.lottie.LottieAnimationView
@@ -31,6 +31,7 @@
         android:paddingLeft="12dp"
         android:paddingTop="50dp"
         android:paddingRight="12dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/onbheadtxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
@@ -40,17 +41,39 @@
         app:lottie_rawRes="@raw/onboarding2"
         app:lottie_repeatCount="10"></com.airbnb.lottie.LottieAnimationView>
 
+    <ImageView
+        android:id="@+id/onbimg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="90dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="50dp"
+        android:paddingRight="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/onbheadtxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_illustration1">
+
+    </ImageView>
+
     <TextView
         android:id="@+id/onbheadtxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/montserrat_semibold"
         android:letterSpacing="0.02"
-        android:text="All Recipes you need"
+        android:text="Discover all the best recipes you needed"
         android:textAlignment="center"
         android:textColor="@color/textBlack"
-        android:textSize="25sp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/onbsubtxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="35dp"
         android:fontFamily="@font/montserrat"
         android:letterSpacing="0.02"
         android:lineSpacingExtra="5dp"
