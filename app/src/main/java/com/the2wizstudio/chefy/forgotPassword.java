@@ -9,14 +9,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import com.the2wizstudio.chefy.databinding.ActivityLoginBinding;
+import com.the2wizstudio.chefy.databinding.ActivityForgotPasswordBinding;
 
-public class loginActivity extends AppCompatActivity {
-    ActivityLoginBinding binding;
+public class forgotPassword extends AppCompatActivity {
+    ActivityForgotPasswordBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityLoginBinding.inflate(getLayoutInflater());
+        binding=ActivityForgotPasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         this.getSupportActionBar().hide();
 
@@ -25,7 +25,7 @@ public class loginActivity extends AppCompatActivity {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         }
-        
+
         viewFunc();
     }
 
@@ -36,12 +36,6 @@ public class loginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-            }
-        });
-        binding.forpassText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(loginActivity.this,forgotPassword.class));
             }
         });
     }

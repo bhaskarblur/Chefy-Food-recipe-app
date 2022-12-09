@@ -34,7 +34,7 @@ public class loginAsk extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(loginAsk.this,loginActivity.class));
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+                overridePendingTransition(R.anim.fade_2,R.anim.fade);
             }
         });
     }
@@ -60,6 +60,6 @@ public class loginAsk extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.fade_2,R.anim.fade);
     }
 }

@@ -24,4 +24,7 @@
         <item name="android:paddingTop">8dp</item>
         <item name="boxStrokeWidth">1.5dp</item>
     </style>
+    <style name="TextInputLayoutStyle2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
 </resources>
