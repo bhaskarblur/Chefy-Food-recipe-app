@@ -4,15 +4,20 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+
+import com.the2wizstudio.chefy.databinding.ActivityLoginAskBinding;
 
 public class loginAsk extends AppCompatActivity {
-
+    ActivityLoginAskBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_ask);
+        binding=ActivityLoginAskBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         this.getSupportActionBar().hide();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -20,6 +25,18 @@ public class loginAsk extends AppCompatActivity {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.backgroundGreen));
         }
+        
+        viewFunc();
+    }
+
+    private void viewFunc() {
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginAsk.this,loginActivity.class));
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+            }
+        });
     }
 
 
@@ -39,7 +56,6 @@ public class loginAsk extends AppCompatActivity {
                         }
                     });
             builder.show();
-
     }
     @Override
     public void finish() {
