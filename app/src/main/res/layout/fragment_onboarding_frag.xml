@@ -84,11 +84,12 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:clickable="true"
+        android:letterSpacing="0.02"
         android:foreground="?android:selectableItemBackground"
         android:text="Skip"
         android:textColor="#332C5E"
         android:textSize="16.5sp"
-        app:fontFamily="@font/montserrat_bold"
+        app:fontFamily="@font/montserrat_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -12,4 +12,6 @@
     <color name="textGrey">#97A2B0</color>
     <color name="buttonDarkGreen">#042628</color>
     <color name="textWhite">#FFFFFF</color>
+    <color name="googleRed">#F06155</color>
+    <color name="facebookBlue">#1E76D6</color>
 </resources>
