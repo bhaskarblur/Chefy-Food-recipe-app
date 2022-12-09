@@ -1,5 +1,6 @@
 package com.the2wizstudio.chefy;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -7,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -46,38 +48,34 @@ public class onBoarding extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onbinding.viewpager.setCurrentItem(0,true);
-              //  onboardingFragment.setCurrentPos(1);
             }
         });
         onbinding.onboardingProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onbinding.viewpager.setCurrentItem(1,true);
-               // onboardingFragment.setCurrentPos(2);
             }
         });
         onbinding.onboardingProgress3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onbinding.viewpager.setCurrentItem(2,true);
-               // onboardingFragment.setCurrentPos(3);
             }
         });
         onbinding.onboardingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(onbinding.viewpager.getCurrentItem()==1 && !onbinding.onboardingButton.getText().equals("Next")) {
+                if(onbinding.viewpager.getCurrentItem()==0) {
                     onbinding.viewpager.setCurrentItem(1,true);
                }
-                else if(onbinding.viewpager.getCurrentItem()==2 && !onbinding.onboardingButton.getText().equals("Next")) {
+                else if(onbinding.viewpager.getCurrentItem()==1) {
                     onbinding.viewpager.setCurrentItem(2,true);
                 }
                 else if(onbinding.onboardingButton.getText().equals("Get Started")) {
-                    Toast.makeText(onBoarding.this, "Welcome", Toast.LENGTH_SHORT).show();
-                    SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
-                    SharedPreferences.Editor editor=sharedPreferences.edit();
-                    editor.putString("onbdone","yes");
-                    editor.commit();
+                  //  SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
+                  //  SharedPreferences.Editor editor=sharedPreferences.edit();
+                  //  editor.putString("onbdone","yes");
+                  //  editor.commit();
                     startActivity(new Intent(onBoarding.this,loginAsk.class));
                     finish();
                 }
@@ -156,5 +154,29 @@ public class onBoarding extends AppCompatActivity {
         this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
     }
 
+    @Override
+    public void onBackPressed() {
+        if(onbinding.viewpager.getCurrentItem()==0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this).
+                    setTitle("Exit?").setMessage("Do you want to exit the app?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
+                        }
+                    });
+            builder.show();
+        }
+        else if (onbinding.viewpager.getCurrentItem()==1) {
+            onbinding.viewpager.setCurrentItem(0,true);
+        }
+        else if (onbinding.viewpager.getCurrentItem()==2) {
+            onbinding.viewpager.setCurrentItem(1,true);
+        }
+    }
 }

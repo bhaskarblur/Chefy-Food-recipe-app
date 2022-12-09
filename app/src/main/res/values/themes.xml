@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Chefy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/textWhite</item>
-        <item name="colorPrimaryVariant">@color/textWhite</item>
-        <item name="colorOnPrimary">@color/textWhite</item>
+        <item name="colorPrimary">@color/textBlack</item>
+        <item name="colorPrimaryVariant">@color/textBlack</item>
+        <item name="colorOnPrimary">@color/textBlack</item>
         <!-- Secondary brand color. -->
         <item name="android:textColorPrimaryInverse">#E9EDEB</item>
         <item name="android:textColorSecondary">@color/textGrey</item>
