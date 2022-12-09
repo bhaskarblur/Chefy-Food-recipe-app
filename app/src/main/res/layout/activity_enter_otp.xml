@@ -68,7 +68,7 @@
             <Button
                 android:id="@+id/confirm"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="66dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
@@ -92,7 +92,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="30dp"
                 android:clickable="true"
@@ -105,10 +104,241 @@
                 app:fontFamily="@font/montserrat_semibold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout1"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginButton"
-                app:layout_constraintVertical_bias="0.13999999" />
+                app:layout_constraintTop_toBottomOf="@+id/onbsubtxt2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otp_field"
+                    style="@style/TextInputLayoutStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:baselineAligned="false"
+                    android:hint=""
+                    android:outlineProvider="none"
+                    android:typeface="@font/montserrat_medium"
+                    app:boxBackgroundColor="#E6EBF2"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="@color/textBlack"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:expandedHintEnabled="false"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#97A2B0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleTint="#7A667B"
+                    app:placeholderText=""
+                    app:placeholderTextColor="#97A2B0">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpbox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:inputType="phone"
+                        android:letterSpacing="0.01"
+                        android:maxLength="1"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/textBlack"
+                        android:textColorHint="#97A2B0"
+                        android:textSize="25sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout1"
+                app:layout_constraintTop_toBottomOf="@+id/onbsubtxt2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otp_field2"
+                    style="@style/TextInputLayoutStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:baselineAligned="false"
+                    android:hint=""
+                    android:outlineProvider="none"
+                    android:typeface="@font/montserrat_medium"
+                    app:boxBackgroundColor="#E6EBF2"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="@color/textBlack"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:expandedHintEnabled="false"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#97A2B0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleTint="#7A667B"
+                    app:placeholderText=""
+                    app:placeholderTextColor="#97A2B0">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpbox2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:inputType="phone"
+                        android:letterSpacing="0.01"
+                        android:maxLength="1"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/textBlack"
+                        android:textColorHint="#97A2B0"
+                        android:textSize="25sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/onbsubtxt2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otp_field3"
+                    style="@style/TextInputLayoutStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:baselineAligned="false"
+                    android:hint=""
+                    android:outlineProvider="none"
+                    android:typeface="@font/montserrat_medium"
+                    app:boxBackgroundColor="#E6EBF2"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="@color/textBlack"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:expandedHintEnabled="false"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#97A2B0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleTint="#7A667B"
+                    app:placeholderText=""
+                    app:placeholderTextColor="#97A2B0">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpbox3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:inputType="phone"
+                        android:letterSpacing="0.01"
+                        android:maxLength="1"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/textBlack"
+                        android:textColorHint="#97A2B0"
+                        android:textSize="25sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/onbsubtxt2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otp_field4"
+                    style="@style/TextInputLayoutStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:baselineAligned="false"
+                    android:hint=""
+                    android:outlineProvider="none"
+                    android:typeface="@font/montserrat_medium"
+                    app:boxBackgroundColor="#E6EBF2"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="@color/textBlack"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:expandedHintEnabled="false"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#97A2B0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleTint="#7A667B"
+                    app:placeholderText=""
+                    app:placeholderTextColor="#97A2B0">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpbox4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:inputType="phone"
+                        android:letterSpacing="0.01"
+                        android:maxLength="1"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/textBlack"
+                        android:textColorHint="#97A2B0"
+                        android:textSize="25sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

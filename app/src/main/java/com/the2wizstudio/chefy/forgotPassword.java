@@ -38,6 +38,14 @@ public class forgotPassword extends AppCompatActivity {
                 finish();
             }
         });
+
+        binding.sendotp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(forgotPassword.this,enterOTP.class));
+                overridePendingTransition(R.anim.fade_2,R.anim.fade);
+            }
+        });
     }
 
     @Override

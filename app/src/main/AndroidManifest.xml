@@ -17,9 +17,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_icon_android"
+        android:icon="@mipmap/ic_applogo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_icon_android"
+        android:roundIcon="@mipmap/ic_applogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chefy"
         android:usesCleartextTraffic="true"
@@ -27,17 +27,21 @@
         <activity
             android:name=".enterOTP"
             android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".forgotPassword"
             android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".loginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".loginAsk"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".onBoarding"
             android:exported="false"
