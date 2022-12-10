@@ -53,8 +53,21 @@ public class enterOTP extends AppCompatActivity {
         binding.confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(enterOTP.this,resetPassword.class));
-                overridePendingTransition(R.anim.fade_2,R.anim.fade);
+                Intent intent=getIntent();
+                Bundle bundle=intent.getExtras();
+                String action=bundle.getString("action");
+                if(action.toString().equals("forgotPassword")) {
+                    startActivity(new Intent(enterOTP.this,resetPassword.class));
+                    overridePendingTransition(R.anim.fade_2,R.anim.fade);
+                    finish();
+                }
+                else if(action.toString().equals("createAccount")) {
+                    // create new account;
+                    startActivity(new Intent(enterOTP.this,selectInterest.class));
+                    overridePendingTransition(R.anim.fade_2,R.anim.fade);
+                    finish();
+                }
+
             }
         });
 

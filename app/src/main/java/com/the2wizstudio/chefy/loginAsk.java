@@ -37,6 +37,14 @@ public class loginAsk extends AppCompatActivity {
                 overridePendingTransition(R.anim.fade_2,R.anim.fade);
             }
         });
+
+        binding.signupText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginAsk.this,createAccount.class));
+                overridePendingTransition(R.anim.fade_2,R.anim.fade);
+            }
+        });
     }
 
 

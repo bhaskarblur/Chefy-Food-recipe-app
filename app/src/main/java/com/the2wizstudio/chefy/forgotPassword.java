@@ -43,7 +43,11 @@ public class forgotPassword extends AppCompatActivity {
         binding.sendotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(forgotPassword.this,enterOTP.class));
+                Intent intent=new Intent(forgotPassword.this,enterOTP.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("action","forgotPassword");
+                intent.putExtras(bundle);
+                startActivity(intent);
                 overridePendingTransition(R.anim.fade_2,R.anim.fade);
             }
         });

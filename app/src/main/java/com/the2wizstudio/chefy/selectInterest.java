@@ -1,22 +1,20 @@
 package com.the2wizstudio.chefy;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import com.the2wizstudio.chefy.databinding.ActivityLoginBinding;
+import com.the2wizstudio.chefy.databinding.ActivitySelectInterestBinding;
 
-public class loginActivity extends AppCompatActivity {
-    ActivityLoginBinding binding;
+public class selectInterest extends AppCompatActivity {
+    ActivitySelectInterestBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityLoginBinding.inflate(getLayoutInflater());
+        binding=ActivitySelectInterestBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         this.getSupportActionBar().hide();
 
@@ -25,24 +23,25 @@ public class loginActivity extends AppCompatActivity {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         }
-        
+
         viewFunc();
     }
 
-
     private void viewFunc() {
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.montserrat_medium);
-        binding.phone.setTypeface(typeface);
+
         binding.backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-        binding.forpassText.setOnClickListener(new View.OnClickListener() {
+
+        binding.contButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(loginActivity.this,forgotPassword.class));
+                Intent intent=new Intent(selectInterest.this,preparePlanning.class);
+                startActivity(intent);
+                finish();
                 overridePendingTransition(R.anim.fade_2,R.anim.fade);
             }
         });
