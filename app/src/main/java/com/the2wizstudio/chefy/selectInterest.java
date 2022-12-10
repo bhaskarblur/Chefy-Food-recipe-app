@@ -1,16 +1,27 @@
 package com.the2wizstudio.chefy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.flexbox.AlignItems;
+import com.google.android.flexbox.FlexDirection;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.flexbox.JustifyContent;
+import com.the2wizstudio.chefy.Adapters.interestAdapter;
+import com.the2wizstudio.chefy.Models.interestModel;
 import com.the2wizstudio.chefy.databinding.ActivitySelectInterestBinding;
+
+import java.util.ArrayList;
 
 public class selectInterest extends AppCompatActivity {
     ActivitySelectInterestBinding binding;
+    interestAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +36,30 @@ public class selectInterest extends AppCompatActivity {
         }
 
         viewFunc();
+        initRecyclerView();
+    }
+
+    private void initRecyclerView() {
+        ArrayList<interestModel> list=new ArrayList<>();
+        list.add(new interestModel("https://img.freepik.com/free-photo/flat-lay-batch-cooking-composition_23-2148765597.jpg?w=2000","Discover Recipes"));
+        list.add(new interestModel("https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg","Healthy Living"));
+        list.add(new interestModel("https://static.toiimg.com/photo/72023714.cms","Easy Fit"));
+        list.add(new interestModel("https://media.istockphoto.com/id/1295633127/photo/grilled-chicken-meat-and-fresh-vegetable-salad-of-tomato-avocado-lettuce-and-spinach-healthy.jpg?s=612x612&w=0&k=20&c=Qa3tiqUCO4VpVMQDXLXG47znCmHr_ZIdoynViJ8kW0E=","Daily recipe"));
+        list.add(new interestModel("https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=1200&format=pjpg&exif=1&iptc=1","Live Cooking"));
+        list.add(new interestModel("https://media.istockphoto.com/id/1295633127/photo/grilled-chicken-meat-and-fresh-vegetable-salad-of-tomato-avocado-lettuce-and-spinach-healthy.jpg?s=612x612&w=0&k=20&c=Qa3tiqUCO4VpVMQDXLXG47znCmHr_ZIdoynViJ8kW0E=","Breakfast"));
+        list.add(new interestModel("https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=1200&format=pjpg&exif=1&iptc=1","Lunch"));
+        list.add(new interestModel("https://img.freepik.com/free-photo/flat-lay-batch-cooking-composition_23-2148765597.jpg?w=2000","Dinner"));
+        adapter=new interestAdapter(list,this);
+        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(this);
+        layoutManager.setFlexDirection(FlexDirection.ROW);
+        layoutManager.setJustifyContent(JustifyContent.CENTER);
+        layoutManager.setAlignItems(AlignItems.CENTER);
+        layoutManager.setFlexWrap(FlexWrap.WRAP);
+        binding.interestRecycleview.setLayoutManager(layoutManager);
+       // binding.interestRecycleview.setLayoutManager(new StaggeredGridLayoutManager(5,
+       //         StaggeredGridLayoutManager.HORIZONTAL));
+        binding.interestRecycleview.setAdapter(adapter);
+
     }
 
     private void viewFunc() {

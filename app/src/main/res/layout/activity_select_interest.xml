@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".selectInterest"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -35,13 +36,15 @@
                 android:id="@+id/interest_recycleview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="130dp"
-                android:layout_marginBottom="150dp"
-                app:layout_constraintBottom_toTopOf="@+id/contButton"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="110dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/laterText2"
-                app:layout_constraintVertical_bias="0.19" />
+                tools:itemCount="4"
+                tools:listitem="@layout/interest_layout" />
 
             <TextView
                 android:id="@+id/laterText2"
@@ -64,6 +67,7 @@
                 android:layout_width="0dp"
                 android:layout_height="58dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/onboarding_button"
@@ -78,7 +82,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interest_recycleview"
+                app:layout_constraintVertical_bias="1.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
