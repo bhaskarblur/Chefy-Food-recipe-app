@@ -111,7 +111,7 @@
         android:foreground="?android:selectableItemBackground"
         android:text="Skip"
         android:textColor="#332C5E"
-        android:textSize="16.5sp"
+        android:textSize="16sp"
         app:fontFamily="@font/montserrat_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

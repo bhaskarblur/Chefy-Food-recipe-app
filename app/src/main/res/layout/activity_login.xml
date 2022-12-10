@@ -221,7 +221,7 @@
                 android:text="Forgot password?"
                 android:textAlignment="center"
                 android:textColor="@color/textBlack"
-                android:textSize="16.5sp"
+                android:textSize="16sp"
                 app:fontFamily="@font/montserrat_semibold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -238,7 +238,7 @@
                 android:text="or continue with"
                 android:textAlignment="center"
                 android:textColor="#97A2B0"
-                android:textSize="16.5sp"
+                android:textSize="16sp"
                 app:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toTopOf="@+id/googleLogin"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -249,9 +249,9 @@
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="58dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="400dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/onboarding_button"
                 android:fontFamily="@font/montserrat_semibold"
@@ -265,12 +265,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/pass_layout" />
 
             <Button
                 android:id="@+id/googleLogin"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="58dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="20dp"
@@ -296,7 +296,7 @@
             <Button
                 android:id="@+id/facebookLogin"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="58dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="30dp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".resetPassword"
+    tools:context=".createAccount"
     android:background="@color/white">
 
     <androidx.core.widget.NestedScrollView
@@ -32,103 +32,187 @@
                 app:srcCompat="@drawable/ic_icon_back" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/laterText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:clickable="true"
                 android:letterSpacing="0.02"
-                android:text="Forgot Password"
+                android:text="Create Account"
                 android:textColor="@color/textBlack"
-                android:textSize="17sp"
+                android:textSize="16.5sp"
                 app:fontFamily="@font/montserrat_semibold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/onbsubtxt2"
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="122dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/laterText2"
+                app:srcCompat="@drawable/ic_logo_nobg" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/username_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/montserrat_light"
-                android:letterSpacing="0.02"
-                android:lineSpacingExtra="5dp"
-                android:text="Enter your phone number and we will send you a OTP to reset your password."
-                android:textAllCaps="false"
-                android:textColor="@color/textGrey"
-                android:textSize="14.5sp"
-                android:textStyle="bold"
+                android:layout_marginTop="38dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/logo">
 
-            <Button
-                android:id="@+id/resetButton"
-                android:layout_width="0dp"
-                android:layout_height="58dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/onboarding_button"
-                android:fontFamily="@font/montserrat_semibold"
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:letterSpacing="0.01"
+                    android:text="Username"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/textBlack"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                android:foreground="?android:selectableItemBackground"
-                android:letterSpacing="0.02"
-                android:text="Reset password"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16.5dp"
-                app:backgroundTint="@color/buttonDarkGreen"
-                app:layout_constraintBottom_toBottomOf="parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/username_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="#ffffff"
+                    android:baselineAligned="false"
+                    android:hint="Enter Phone Number"
+                    android:outlineProvider="none"
+                    android:typeface="@font/montserrat_medium"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="@color/textBlack"
+                    app:boxStrokeWidth="1.3dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:expandedHintEnabled="false"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#97A2B0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6"
+                    app:passwordToggleTint="#7A807B"
+                    app:placeholderText="Enter Phone Number"
+                    app:placeholderTextColor="#97A2B0">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableStart="@drawable/ic_icon_call"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:letterSpacing="0.01"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/textBlack"
+                        android:textColorHint="#97A2B0"
+                        android:textSize="15.5sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pass_layout2"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/username_layout">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:letterSpacing="0.01"
+                    android:text="Phone Number"
+
+                    android:textAlignment="textStart"
+                    android:textColor="@color/textBlack"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="#ffffff"
+                    android:baselineAligned="false"
+                    android:hint="Enter Phone Number"
+                    android:outlineProvider="none"
+                    android:typeface="@font/montserrat_medium"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="@color/textBlack"
+                    app:boxStrokeWidth="1.3dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:expandedHintEnabled="false"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#97A2B0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    app:passwordToggleTint="#7A807B"
+                    app:placeholderText="Enter Phone Number"
+                    app:placeholderTextColor="#97A2B0">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableStart="@drawable/ic_icon_call"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="phone"
+                        android:letterSpacing="0.01"
+                        android:maxLength="10"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/textBlack"
+                        android:textColorHint="#97A2B0"
+                        android:textSize="15.5sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pass_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/onbsubtxt2">
-
-                <TextView
-                    android:id="@+id/passText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="24dp"
-                    android:fontFamily="@font/montserrat_light"
-                    android:letterSpacing="0.02"
-                    android:lineSpacingExtra="5dp"
-                    android:text="Must be at least 8 characters."
-                    android:textAllCaps="false"
-                    android:textColor="#97A2B0"
-                    android:textSize="13.8sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/pass_field" />
-
-                <ImageView
-                    android:id="@+id/tickIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/pass_field"
-                    app:srcCompat="@drawable/icon_tick" />
+                app:layout_constraintTop_toBottomOf="@+id/phone_layout">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -173,7 +257,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView5"
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="#97A2B0"
-                    app:placeholderText=""
+                    app:placeholderText="Enter Password"
                     app:placeholderTextColor="#97A2B0">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -188,112 +272,57 @@
                         android:paddingTop="10dp"
                         android:password="true"
                         android:singleLine="true"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/textBlack"
-                        android:textColorHint="#97A2B0"
-                        android:textSize="16.5sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/pass_layout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pass_layout">
-
-                <TextView
-                    android:id="@+id/confirmpassText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="24dp"
-                    android:fontFamily="@font/montserrat_light"
-                    android:letterSpacing="0.02"
-                    android:lineSpacingExtra="5dp"
-                    android:text="Must be at least 8 characters."
-                    android:textAllCaps="false"
-                    android:textColor="#97A2B0"
-                    android:textSize="13.8sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/pass_field" />
-
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:letterSpacing="0.01"
-                    android:text="Confirm Password"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/textBlack"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/pass_field2"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="24dp"
-                    android:background="#ffffff"
-                    android:baselineAligned="false"
-                    android:hint="Enter Password"
-                    android:outlineProvider="none"
-                    android:typeface="@font/montserrat_medium"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusBottomEnd="16dp"
-                    app:boxCornerRadiusBottomStart="16dp"
-                    app:boxCornerRadiusTopEnd="16dp"
-                    app:boxCornerRadiusTopStart="16dp"
-                    app:boxStrokeColor="@color/textBlack"
-                    app:boxStrokeWidth="1.3dp"
-                    app:boxStrokeWidthFocused="2dp"
-                    app:expandedHintEnabled="false"
-                    app:hintEnabled="false"
-                    app:hintTextColor="#97A2B0"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6"
-                    app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="#97A2B0"
-                    app:placeholderText=""
-                    app:placeholderTextColor="#97A2B0">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/pass2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:drawableStart="@drawable/ic_icon_password"
-                        android:drawablePadding="10dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:inputType="textPassword"
-                        android:letterSpacing="0.01"
-                        android:paddingTop="10dp"
-                        android:password="true"
-                        android:singleLine="true"
                         android:textAlignment="textStart"
                         android:textColor="@color/textBlack"
                         android:textColorHint="#97A2B0"
-                        android:textSize="16.5sp" />
+                        android:textSize="15.5sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/forpassText2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="30dp"
+                android:foreground="?android:selectableItemBackground"
+                android:letterSpacing="0.02"
+                android:text="By continuing, you agree to the Terms of Services and Privacy Policy"
+                android:textAlignment="center"
+                android:textColor="#97A2B0"
+                android:textSize="16sp"
+                app:fontFamily="@font/montserrat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contButton"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/contButton"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/onboarding_button"
+                android:fontFamily="@font/montserrat_semibold"
+                android:foreground="?android:selectableItemBackground"
+                android:letterSpacing="0.02"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:backgroundTint="@color/buttonDarkGreen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pass_layout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

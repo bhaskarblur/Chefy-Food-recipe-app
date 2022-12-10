@@ -69,7 +69,7 @@
             <Button
                 android:id="@+id/confirm"
                 android:layout_width="0dp"
-                android:layout_height="66dp"
+                android:layout_height="58dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
@@ -101,7 +101,7 @@
                 android:text="Resend Code"
                 android:textAlignment="center"
                 android:textColor="@color/textBlack"
-                android:textSize="16.5sp"
+                android:textSize="16sp"
                 app:fontFamily="@font/montserrat_semibold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
