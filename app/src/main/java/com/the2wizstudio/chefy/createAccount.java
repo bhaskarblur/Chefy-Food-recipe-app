@@ -10,6 +10,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -40,6 +41,8 @@ public class createAccount extends AppCompatActivity {
     }
 
     private void ManageUI() {
+        binding.pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        binding.pass.setTransformationMethod(new MyPasswordTransformationMethod());
         Typeface font = ResourcesCompat.getFont(this, R.font.montserrat);
         Typeface font2 = ResourcesCompat.getFont(this, R.font.montserrat_medium);
         SpannableStringBuilder SS = new SpannableStringBuilder("By continuing, you agree to the\n");
