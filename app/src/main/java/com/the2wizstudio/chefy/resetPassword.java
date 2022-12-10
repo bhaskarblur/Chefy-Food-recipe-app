@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -47,9 +48,17 @@ public class resetPassword extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(binding.pass.getText().toString().length()>7)
+                if(binding.pass.getText().toString().length()>5)
                 {
                     binding.tickIcon.setColorFilter(ContextCompat.getColor(resetPassword.this, R.color.backgroundGreen));
+                    binding.passField.setBoxStrokeColor(Color.parseColor("#333333"));
+                    binding.passText.setText("Must be at least 6 characters.");
+                    binding.passText.setTextColor(Color.parseColor("#333333"));
+                }
+               else if(binding.pass.getText().toString().length()<6) {
+                    binding.passField.setBoxStrokeColor(Color.parseColor("#F03828"));
+                    binding.passText.setText("Must be at least 6 characters.");
+                    binding.passText.setTextColor(Color.parseColor("#F03828"));
                 }
                 else
                 {
@@ -70,12 +79,78 @@ public class resetPassword extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                binding.pass2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                binding.pass2.setTransformationMethod(new MyPasswordTransformationMethod());
+                if(!binding.pass.getText().toString().equals(binding.pass2.getText().toString()))
+                {
+                    binding.passField2.setBoxStrokeColor(Color.parseColor("#F03828"));
+                    binding.passField.setBoxStrokeColor(Color.parseColor("#F03828"));
+                    binding.passText.setText("Passwords don't match");
+                    binding.passText.setTextColor(Color.parseColor("#F03828"));
+                }
+                else if(!binding.pass2.getText().toString().equals(null) && binding.pass.getText().toString().equals(binding.pass2.getText().toString())){
+                    binding.passField2.setBoxStrokeColor(Color.parseColor("#333333"));
+                    binding.passText.setText("Passwords match");
+                    binding.passText.setTextColor(Color.parseColor("#333333"));
+                }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        binding.pass.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+
+                    if(binding.pass.getText().toString().length()<6) {
+                        binding.passField.setBoxStrokeColor(Color.parseColor("#F03828"));
+                        binding.passText.setText("Must be at least 6 characters.");
+                        binding.passText.setTextColor(Color.parseColor("#F03828"));
+                    }
+                    else if(!binding.pass.getText().toString().equals(binding.pass2.getText().toString()))
+                    {
+                        binding.passField2.setBoxStrokeColor(Color.parseColor("#F03828"));
+                        binding.passField.setBoxStrokeColor(Color.parseColor("#F03828"));
+                        binding.passText.setText("Passwords don't match");
+                        binding.passText.setTextColor(Color.parseColor("#F03828"));
+                    }
+                    else if(!binding.pass2.getText().toString().equals(null) && binding.pass.getText().toString().equals(binding.pass2.getText().toString())){
+                        binding.passField.setBoxStrokeColor(Color.parseColor("#333333"));
+                        binding.passText.setText("Passwords match");
+                        binding.passText.setTextColor(Color.parseColor("#333333"));
+                    }
+                    else {
+                        binding.passField.setBoxStrokeColor(Color.parseColor("#333333"));
+                        binding.passText.setTextColor(Color.parseColor("#333333"));
+                    }
+
+            }
+        });
+
+        binding.pass2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                    if(binding.pass2.getText().toString().length()<6) {
+                        binding.passField2.setBoxStrokeColor(Color.parseColor("#F03828"));
+                    }
+                   else if(!binding.pass.getText().toString().equals(binding.pass2.getText().toString()))
+                    {
+                        binding.passField2.setBoxStrokeColor(Color.parseColor("#F03828"));
+                        binding.passField.setBoxStrokeColor(Color.parseColor("#F03828"));
+                        binding.passText.setText("Passwords don't match");
+                        binding.passText.setTextColor(Color.parseColor("#F03828"));
+                    }
+                    else if(!binding.pass.getText().toString().equals(null) && binding.pass.getText().toString().equals(binding.pass2.getText().toString())){
+                        binding.passField2.setBoxStrokeColor(Color.parseColor("#333333"));
+                        binding.passText.setText("Passwords match");
+                        binding.passText.setTextColor(Color.parseColor("#333333"));
+                    }
+                    else {
+                        binding.passField2.setBoxStrokeColor(Color.parseColor("#333333"));
+                        binding.passText.setTextColor(Color.parseColor("#333333"));
+                    }
+
 
             }
         });

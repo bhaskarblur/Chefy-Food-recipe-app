@@ -32,6 +32,7 @@
                 app:srcCompat="@drawable/ic_icon_back" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/interest_recycleview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="130dp"

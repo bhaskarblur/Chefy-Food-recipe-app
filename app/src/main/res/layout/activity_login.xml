@@ -121,7 +121,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:inputType="phone"
                         android:letterSpacing="0.01"
-                        android:maxLength="10"
+                        android:maxLength="11"
                         android:paddingTop="10dp"
                         android:singleLine="true"
                         android:textAlignment="textStart"
