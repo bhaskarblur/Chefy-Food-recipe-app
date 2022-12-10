@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,7 +23,13 @@ import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 public class interestAdapter extends RecyclerView.Adapter<interestAdapter.viewHolder> {
 
     private ArrayList<interestModel> list=new ArrayList<>();
+    private ArrayList<interestModel> selectedList=new ArrayList<>();
+
     private Context context;
+
+    public ArrayList<interestModel> getSelectedList() {
+        return selectedList;
+    }
 
     public interestAdapter(ArrayList<interestModel> list, Context context) {
         this.list = list;
@@ -45,9 +52,7 @@ public class interestAdapter extends RecyclerView.Adapter<interestAdapter.viewHo
                 resize(700,700).
                 centerCrop().into(holder.image);
         holder.name.setText(list.get(position).getName());
-        Picasso.get().load(R.drawable.ic_selected)
-                .into(holder.selector);
-        holder.selector.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -66,6 +71,26 @@ public class interestAdapter extends RecyclerView.Adapter<interestAdapter.viewHo
             image=itemView.findViewById(R.id.interest_image);
             selector=itemView.findViewById(R.id.selected_image);
             name=itemView.findViewById(R.id.interest_name);
+
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(getAdapterPosition()!=RecyclerView.NO_POSITION) {
+
+                        if(selectedList.contains(list.get(getAdapterPosition()))) {
+                            selector.setVisibility(View.INVISIBLE);
+                            layout.setBackgroundResource(R.drawable.interest_card_notselected);
+                            selectedList.remove(list.get(getAdapterPosition()));
+                        }
+                        else {
+                            selector.setVisibility(View.VISIBLE);
+                            layout.setBackgroundResource(R.drawable.interest_card_selected);
+                            selectedList.add(list.get(getAdapterPosition()));
+                        }
+                    }
+                }
+            });
         }
+
     }
 }
