@@ -1,9 +1,17 @@
 package com.the2wizstudio.chefy.Adapters;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +32,7 @@ public class interestAdapter extends RecyclerView.Adapter<interestAdapter.viewHo
 
     private ArrayList<interestModel> list=new ArrayList<>();
     private ArrayList<interestModel> selectedList=new ArrayList<>();
-
+   private clickListener clickListener;
     private Context context;
 
     public ArrayList<interestModel> getSelectedList() {
@@ -75,8 +83,9 @@ public class interestAdapter extends RecyclerView.Adapter<interestAdapter.viewHo
             layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(getAdapterPosition()!=RecyclerView.NO_POSITION) {
 
+                    if(getAdapterPosition()!=RecyclerView.NO_POSITION) {
+                        setAlphaAnimation(layout);
                         if(selectedList.contains(list.get(getAdapterPosition()))) {
                             selector.setVisibility(View.INVISIBLE);
                             layout.setBackgroundResource(R.drawable.interest_card_notselected);
@@ -87,10 +96,80 @@ public class interestAdapter extends RecyclerView.Adapter<interestAdapter.viewHo
                             layout.setBackgroundResource(R.drawable.interest_card_selected);
                             selectedList.add(list.get(getAdapterPosition()));
                         }
+                        clickListener.onClick(list.get(getAdapterPosition()));
+                    }
+                }
+            });
+
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(getAdapterPosition()!=RecyclerView.NO_POSITION) {
+                        setAlphaAnimation(layout);
+                        if(selectedList.contains(list.get(getAdapterPosition()))) {
+                            selector.setVisibility(View.INVISIBLE);
+                            layout.setBackgroundResource(R.drawable.interest_card_notselected);
+                            selectedList.remove(list.get(getAdapterPosition()));
+                        }
+                        else {
+                            selector.setVisibility(View.VISIBLE);
+                            layout.setBackgroundResource(R.drawable.interest_card_selected);
+                            selectedList.add(list.get(getAdapterPosition()));
+
+                        }
+                        clickListener.onClick(list.get(getAdapterPosition()));
+                    }
+                }
+            });
+
+            selector.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(getAdapterPosition()!=RecyclerView.NO_POSITION) {
+                        setAlphaAnimation(layout);
+                        if(selectedList.contains(list.get(getAdapterPosition()))) {
+                            selector.setVisibility(View.INVISIBLE);
+                            layout.setBackgroundResource(R.drawable.interest_card_notselected);
+                            selectedList.remove(list.get(getAdapterPosition()));
+                        }
+                        else {
+                            selector.setVisibility(View.VISIBLE);
+                            layout.setBackgroundResource(R.drawable.interest_card_selected);
+                            selectedList.add(list.get(getAdapterPosition()));
+                        }
+                        clickListener.onClick(list.get(getAdapterPosition()));
                     }
                 }
             });
         }
 
+        public void setAlphaAnimation(View v) {
+            ObjectAnimator fadeOut = ObjectAnimator.ofFloat(v, "alpha",  1f, .3f);
+            fadeOut.setDuration(80);
+            ObjectAnimator fadeIn = ObjectAnimator.ofFloat(v, "alpha", .3f, 1f);
+            fadeIn.setDuration(80);
+
+            final AnimatorSet mAnimationSet = new AnimatorSet();
+
+            mAnimationSet.play(fadeIn).after(fadeOut);
+
+            mAnimationSet.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+
+                }
+            });
+            mAnimationSet.start();
+        }
+
+    }
+
+    public interface clickListener {
+        void onClick(interestModel interestModel);
+    }
+
+    public void setClickListener(clickListener clickListener){
+        this. clickListener=clickListener;
     }
 }

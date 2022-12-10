@@ -8,12 +8,17 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Toast;
@@ -47,29 +52,58 @@ public class onBoarding extends AppCompatActivity {
         onbinding.onboardingProgress1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onbinding.viewpager.setCurrentItem(0,true);
+                    try {
+                        Thread.sleep(120);
+                        onbinding.viewpager.setCurrentItem(0,true);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
             }
         });
         onbinding.onboardingProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onbinding.viewpager.setCurrentItem(1,true);
+
+                    try {
+                        Thread.sleep(120);
+                        onbinding.viewpager.setCurrentItem(1,true);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
             }
         });
         onbinding.onboardingProgress3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onbinding.viewpager.setCurrentItem(2,true);
+                    try {
+                        Thread.sleep(120);
+                        onbinding.viewpager.setCurrentItem(2,true);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
             }
         });
         onbinding.onboardingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(onbinding.viewpager.getCurrentItem()==0) {
-                    onbinding.viewpager.setCurrentItem(1,true);
-               }
+
+                    try {
+                        Thread.sleep(120);
+                        onbinding.viewpager.setCurrentItem(1,true);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 else if(onbinding.viewpager.getCurrentItem()==1) {
-                    onbinding.viewpager.setCurrentItem(2,true);
+                    try {
+                        Thread.sleep(120);
+                        onbinding.viewpager.setCurrentItem(2,true);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 }
                 else if(onbinding.onboardingButton.getText().equals("Get Started")) {
                   //  SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
@@ -148,6 +182,25 @@ public class onBoarding extends AppCompatActivity {
 
     }
 
+    public void setAlphaAnimation(View v) {
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(v, "alpha",  1f, .3f);
+        fadeOut.setDuration(500);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(v, "alpha", .3f, 1f);
+        fadeIn.setDuration(500);
+
+        final AnimatorSet mAnimationSet = new AnimatorSet();
+
+        mAnimationSet.play(fadeIn).after(fadeOut);
+
+        mAnimationSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+
+            }
+        });
+        mAnimationSet.start();
+    }
     @Override
     public void finish() {
         super.finish();

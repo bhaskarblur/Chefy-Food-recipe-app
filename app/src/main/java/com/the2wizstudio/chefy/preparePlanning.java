@@ -55,7 +55,7 @@ public class preparePlanning extends AppCompatActivity {
       int currentProgress=700;
 
       ObjectAnimator.ofInt(pb,"progress",currentProgress).
-              setDuration(7500).
+              setDuration(8000).
               start();
       new Handler().postDelayed(new Runnable() {
           @Override
@@ -71,9 +71,9 @@ public class preparePlanning extends AppCompatActivity {
                       startActivity(intent);
                       overridePendingTransition(R.anim.fade_2,R.anim.fade);
                   }
-              },1500);
+              },1000);
           }
-      },6500);
+      },8500);
     }
     @Override
     public void onBackPressed() {

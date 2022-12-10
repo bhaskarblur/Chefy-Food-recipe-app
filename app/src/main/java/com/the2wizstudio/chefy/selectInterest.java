@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 
 import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
@@ -22,6 +26,7 @@ import java.util.ArrayList;
 public class selectInterest extends AppCompatActivity {
     ActivitySelectInterestBinding binding;
     interestAdapter adapter;
+    private ArrayList<interestModel> interestList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +64,52 @@ public class selectInterest extends AppCompatActivity {
        // binding.interestRecycleview.setLayoutManager(new StaggeredGridLayoutManager(5,
        //         StaggeredGridLayoutManager.HORIZONTAL));
         binding.interestRecycleview.setAdapter(adapter);
+        final LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(this,
+                R.anim.fade_anim);
+        binding.interestRecycleview.setLayoutAnimation(controller);
+        binding.interestRecycleview.scheduleLayoutAnimation();
+        adapter.setClickListener(new interestAdapter.clickListener() {
+            @Override
+            public void onClick(interestModel interestModel) {
+                if(interestList.contains(interestModel)) {
+                    interestList.remove(interestModel);
+                }
+                else {
+                    interestList.add(interestModel);
+                }
+                if(interestList.size()<1) {
+                    binding.contButton.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                            return true;
+                        }
+                    });
+                    binding.contButton.setAlpha(0.5F);
+                }
+                else {
+                    binding.contButton.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                            return false;
+                        }
+                    });
+                    binding.contButton.setAlpha(1F);
+                }
+            }
+        });
 
     }
 
     private void viewFunc() {
-
+        if(interestList.size()<1) {
+            binding.contButton.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    return true;
+                }
+            });
+            binding.contButton.setAlpha(0.5F);
+        }
         binding.backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
