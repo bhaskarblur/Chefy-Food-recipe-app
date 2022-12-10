@@ -50,6 +50,14 @@ public class enterOTP extends AppCompatActivity {
             }
         });
 
+        binding.confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(enterOTP.this,resetPassword.class));
+                overridePendingTransition(R.anim.fade_2,R.anim.fade);
+            }
+        });
+
     }
 
     private void ManageUI() {

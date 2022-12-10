@@ -39,6 +39,7 @@ public class forgotPassword extends AppCompatActivity {
             }
         });
 
+
         binding.sendotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
