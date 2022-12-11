@@ -344,6 +344,7 @@
                         android:inputType="textPassword"
                         android:letterSpacing="0.01"
                         android:paddingTop="10dp"
+                        android:imeOptions="actionDone"
                         android:password="true"
                         android:singleLine="true"
                         android:textAlignment="textStart"

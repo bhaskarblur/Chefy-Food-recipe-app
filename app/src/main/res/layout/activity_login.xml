@@ -196,6 +196,7 @@
                         android:drawablePadding="10dp"
                         android:fontFamily="@font/montserrat_medium"
                         android:inputType="textPassword"
+                        android:imeOptions="actionDone"
                         android:letterSpacing="0.01"
                         android:paddingTop="10dp"
                         android:password="true"

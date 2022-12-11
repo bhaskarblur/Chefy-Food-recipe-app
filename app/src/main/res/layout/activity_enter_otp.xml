@@ -328,6 +328,7 @@
                         android:fontFamily="@font/montserrat_semibold"
                         android:inputType="phone"
                         android:letterSpacing="0.01"
+                        android:imeOptions="actionDone"
                         android:maxLength="1"
                         android:paddingTop="10dp"
                         android:singleLine="true"
