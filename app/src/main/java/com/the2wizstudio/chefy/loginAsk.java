@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import com.the2wizstudio.chefy.databinding.ActivityLoginAskBinding;
 
 public class loginAsk extends AppCompatActivity {
     ActivityLoginAskBinding binding;
+    SharedPreferences loginCheck;
+    String loggedIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +28,36 @@ public class loginAsk extends AppCompatActivity {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.backgroundGreen));
         }
-        
+        loginCheck= getSharedPreferences("loginCheck",0);
+        loggedIn= loginCheck.getString("loggedIn","");
+        if(loggedIn.equals("yes")) {
+            Intent intent=new Intent(loginAsk.this,mainActivity.class);
+            finish();
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_2,R.anim.fade);
+        }
         viewFunc();
     }
 
     private void viewFunc() {
+
+        binding.laterText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPreferences2= getSharedPreferences("loginCheck",0);
+                SharedPreferences.Editor editor2=sharedPreferences2.edit();
+                editor2.putString("loggedIn","yes");
+                editor2.commit();
+                SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putString("onbdone","yes");
+                editor.commit();
+                Intent intent=new Intent(loginAsk.this,mainActivity.class);
+                finish();
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_2,R.anim.fade);
+            }
+        });
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

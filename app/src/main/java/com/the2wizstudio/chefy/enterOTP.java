@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -64,6 +65,21 @@ public class enterOTP extends AppCompatActivity {
                 else if(action.toString().equals("createAccount")) {
                     // create new account;
                     startActivity(new Intent(enterOTP.this,selectInterest.class));
+                    overridePendingTransition(R.anim.fade_2,R.anim.fade);
+                    finish();
+
+                }
+                else if(action.toString().equals("login")) {
+                    // login to Home;
+                    SharedPreferences sharedPreferences2= getSharedPreferences("loginCheck",0);
+                    SharedPreferences.Editor editor2=sharedPreferences2.edit();
+                    editor2.putString("loggedIn","yes");
+                    editor2.commit();
+                    SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("onbdone","yes");
+                    editor.commit();
+                    startActivity(new Intent(enterOTP.this,mainActivity.class));
                     overridePendingTransition(R.anim.fade_2,R.anim.fade);
                     finish();
                 }

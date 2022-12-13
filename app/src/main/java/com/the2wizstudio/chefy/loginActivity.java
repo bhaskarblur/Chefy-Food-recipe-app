@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,6 +47,18 @@ public class loginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(loginActivity.this,forgotPassword.class));
+                overridePendingTransition(R.anim.fade_2,R.anim.fade);
+            }
+        });
+
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(loginActivity.this,enterOTP.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("action","login");
+                intent.putExtras(bundle);
+                startActivity(intent);
                 overridePendingTransition(R.anim.fade_2,R.anim.fade);
             }
         });

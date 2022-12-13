@@ -3,6 +3,7 @@ package com.the2wizstudio.chefy;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,10 +76,10 @@ public class newOnBoardingAdapter extends RecyclerView.Adapter<newOnBoardingAdap
         holder.skipText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //   SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
-                //    SharedPreferences.Editor editor=sharedPreferences.edit();
-                //    editor.putString("onbdone","yes");
-                //    editor.commit();
+                   SharedPreferences sharedPreferences= context.getSharedPreferences("onbdone",0);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("onbdone","yes");
+                    editor.commit();
                 context.startActivity(new Intent(context,loginAsk.class));
                 ((Activity)context).finish();
             }

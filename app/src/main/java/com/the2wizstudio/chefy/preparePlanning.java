@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -66,7 +67,11 @@ public class preparePlanning extends AppCompatActivity {
                   public void run() {
                       pb.setProgress(1000);
                       binding.shimmerViewContainer.stopShimmerAnimation();
-                      Intent intent=new Intent(preparePlanning.this,createAccount.class);
+                        SharedPreferences sharedPreferences= getSharedPreferences("onbdone",0);
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+                        editor.putString("onbdone","yes");
+                        editor.commit();
+                      Intent intent=new Intent(preparePlanning.this,mainActivity.class);
                       finish();
                       startActivity(intent);
                       overridePendingTransition(R.anim.fade_2,R.anim.fade);
