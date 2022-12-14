@@ -103,7 +103,7 @@
                 android:letterSpacing="0.02"
                 android:text="20 Min"
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="13.5sp"
                 app:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -112,8 +112,8 @@
 
             <ImageView
                 android:id="@+id/timeImage"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="16.5dp"
+                android:layout_height="16.5dp"
                 android:src="@drawable/ic_icon_time"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

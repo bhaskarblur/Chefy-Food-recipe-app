@@ -5,18 +5,18 @@
     android:id="@+id/recipe_card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="6dp"
+    android:layout_marginTop="2dp"
     android:layout_marginLeft="6dp"
     android:layout_marginRight="12dp"
     android:layout_marginBottom="6dp"
     android:clickable="true"
     app:cardCornerRadius="20dp"
-    app:cardElevation="6dp">
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recipe_layout"
-        android:layout_width="185dp"
-        android:layout_height="205dp"
+        android:layout_width="200dp"
+        android:layout_height="230dp"
         android:layout_margin="1dp"
         android:background="?android:colorBackground"
         android:clickable="true"
@@ -25,9 +25,9 @@
         <ImageView
             android:id="@+id/recipe_image"
             android:layout_width="0dp"
-            android:layout_height="105dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,20 +36,39 @@
             app:srcCompat="@color/backgroundGreen"
             tools:srcCompat="@drawable/sample_foodimag" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/heartButton"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/heart_button"
+            android:elevation="0dp"
+            android:foreground="?android:selectableItemBackground"
+            android:paddingLeft="4dp"
+            android:paddingTop="10dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="6dp"
+
+            app:backgroundTint="@color/textWhite"
+            app:icon="@drawable/ic_icon_heart_small"
+            app:iconTint="@color/textBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/recipe_head"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginTop="9dp"
-
             android:layout_marginEnd="14dp"
             android:fontFamily="@font/montserrat_medium"
             android:letterSpacing="0.01"
             android:text="Healthy Taco Salad with fresh vegetable"
             android:textAlignment="viewStart"
             android:textColor="@color/textBlack"
-            android:textSize="14.2sp"
+            android:textSize="15.4sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +77,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="14dp"
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -67,13 +86,13 @@
                 android:id="@+id/recipeTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginEnd="14dp"
                 android:foreground="?android:selectableItemBackground"
                 android:letterSpacing="0.02"
                 android:text="20 Min"
                 android:textColor="#97A2B0"
-                android:textSize="13sp"
+                android:textSize="13.5sp"
                 app:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,8 +101,8 @@
 
             <ImageView
                 android:id="@+id/timeImage"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="16.5dp"
+                android:layout_height="16.5dp"
                 android:src="@drawable/ic_icon_time_2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +114,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="14dp"
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -104,13 +123,13 @@
                 android:id="@+id/recipeKcal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginEnd="14dp"
                 android:foreground="?android:selectableItemBackground"
                 android:letterSpacing="0.02"
                 android:text="120 Kcal"
                 android:textColor="#97A2B0"
-                android:textSize="13sp"
+                android:textSize="13.5sp"
                 app:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +138,8 @@
 
             <ImageView
                 android:id="@+id/timeImage"
-                android:layout_width="15dp"
-                android:layout_height="16dp"
+                android:layout_width="16.5dp"
+                android:layout_height="16.5dp"
                 android:layout_marginStart="14dp"
                 android:src="@drawable/ic_icon_time_2"
                 app:layout_constraintBottom_toBottomOf="parent"
