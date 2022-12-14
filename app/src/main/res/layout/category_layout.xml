@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="2dp"
-    android:layout_marginRight="12dp"
+    android:layout_marginRight="14dp"
     android:layout_marginBottom="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +30,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="15.5sp"
-            app:fontFamily="@font/montserrat_medium"
+            app:fontFamily="@font/montserrat"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

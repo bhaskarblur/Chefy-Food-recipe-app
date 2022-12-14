@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="2dp"
     android:layout_marginLeft="6dp"
-    android:layout_marginRight="12dp"
+    android:layout_marginRight="14dp"
     android:layout_marginBottom="6dp"
     android:clickable="true"
     app:cardCornerRadius="20dp"
@@ -96,11 +96,11 @@
                 app:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/timeImage"
+                app:layout_constraintStart_toEndOf="@+id/kcalImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/timeImage"
+                android:id="@+id/kcalImage"
                 android:layout_width="16.5dp"
                 android:layout_height="16.5dp"
                 android:src="@drawable/ic_icon_time_2"

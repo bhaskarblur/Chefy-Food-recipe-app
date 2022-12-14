@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipe_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="14dp"
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recipe_layout"
+        android:layout_width="110dp"
+        android:layout_height="138dp"
+        android:layout_margin="1dp"
+        android:background="?android:colorBackground"
+        android:clickable="true"
+        tools:targetApi="n_mr1">
+
+        <ImageView
+            android:id="@+id/recipe_image"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@color/backgroundGreen"
+            tools:srcCompat="@drawable/sample_foodimag" />
+
+        <TextView
+            android:id="@+id/recipe_head"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing="0.01"
+            android:singleLine="true"
+            android:text="Egg and Avocado"
+            android:textAlignment="viewStart"
+            android:textColor="@color/textBlack"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

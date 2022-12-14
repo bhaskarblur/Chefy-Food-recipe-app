@@ -61,12 +61,13 @@ public class mainActivity extends AppCompatActivity {
                 if(cookOpened[0]) {
                     cookOpened[0] = false;
                     setAlphaAnimation2(binding.cooklayout);
+                   // setAlphaAnimation(binding.cooklayout);
 
                 }
                 else {
                     cookOpened[0] = true;
                     setAlphaAnimation3(binding.cooklayout);
-
+                 //   setAlphaAnimation(binding.cooklayout);
 
                 }
 
@@ -88,12 +89,13 @@ public class mainActivity extends AppCompatActivity {
 
                 // Picasso.get().load(R.drawable.ic_profile).into(binding.profileIcon);
                 binding.profileIcon.setImageResource(R.drawable.ic_profile_notselected);
-
+                getSupportFragmentManager().popBackStackImmediate();
                 homeFragment homeFragment=new homeFragment();
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
                 transaction.replace(R.id.mainFragment, homeFragment);
                 transaction.commit();
+                getSupportFragmentManager().popBackStackImmediate();
 
             }
         });
@@ -113,11 +115,12 @@ public class mainActivity extends AppCompatActivity {
                 // Picasso.get().load(R.drawable.ic_profile).into(binding.profileIcon);
                 binding.profileIcon.setImageResource(R.drawable.ic_profile_notselected);
 
-               // trendingFragment homeFragment=new trendingFragment();
-             //   FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-             //   transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
-              //  transaction.replace(R.id.mainFragment, homeFragment);
-              //  transaction.commit();
+                searchFragment homeFragment=new searchFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
+                transaction.addToBackStack("search");
+                transaction.replace(R.id.mainFragment, homeFragment);
+                transaction.commit();
             }
         });
 
@@ -206,10 +209,10 @@ public class mainActivity extends AppCompatActivity {
                 oa2.start();
 
                 Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.slide_in_down_50);
+                        R.anim.fade_2);
 
                 Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.slide_in_up_50);
+                        R.anim.fade);
 
                 binding.chefDialogButtons.startAnimation(slide_up);
 
@@ -241,10 +244,10 @@ public class mainActivity extends AppCompatActivity {
                 oa2.start();
                 binding.chefDialog.setVisibility(View.VISIBLE);
                 Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.slide_in_down_50);
+                        R.anim.fade_2);
 
                 Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.slide_in_up_50);
+                        R.anim.fade);
 
 
                 binding.chefDialogButtons.startAnimation(slide_down);
