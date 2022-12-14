@@ -1,89 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipe_card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="2dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginLeft="6dp"
     android:layout_marginRight="12dp"
-    android:layout_marginBottom="2dp">
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="6dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/featuredLayout"
-        android:layout_width="285dp"
-        android:layout_height="175dp"
-
-        android:background="@drawable/bottom_button"
+        android:id="@+id/recipe_layout"
+        android:layout_width="185dp"
+        android:layout_height="205dp"
+        android:layout_margin="1dp"
+        android:background="?android:colorBackground"
         android:clickable="true"
-        android:foreground="?android:selectableItemBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:targetApi="n_mr1">
 
         <ImageView
-            android:id="@+id/featuredImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/recipe_image"
+            android:layout_width="0dp"
+            android:layout_height="105dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_sample_featuredfood" />
+            app:srcCompat="@color/backgroundGreen"
+            tools:srcCompat="@drawable/sample_foodimag" />
 
         <TextView
-            android:id="@+id/featuredName"
-            android:layout_width="0dp"
+            android:id="@+id/recipe_head"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginBottom="41dp"
-            android:foreground="?android:selectableItemBackground"
-            android:letterSpacing="0.02"
-            android:text="Asian white noodle with extra seafood"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:fontFamily="@font/montserrat_medium"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="9dp"
+
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:letterSpacing="0.01"
+            android:text="Healthy Taco Salad with fresh vegetable"
+            android:textAlignment="viewStart"
+            android:textColor="@color/textBlack"
+            android:textSize="14.2sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/bottom_button"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/featuredAuthorName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:foreground="?android:selectableItemBackground"
-                android:letterSpacing="0.02"
-                android:text="Shanaws"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                app:fontFamily="@font/montserrat"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/featuredAuthorImage"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/featuredAuthorImage"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_marginStart="14dp"
-                android:src="@drawable/cook_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/cook_button" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_image" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -94,15 +64,15 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
-                android:id="@+id/featuredTime"
+                android:id="@+id/recipeTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginEnd="14dp"
                 android:foreground="?android:selectableItemBackground"
                 android:letterSpacing="0.02"
                 android:text="20 Min"
-                android:textColor="@color/white"
+                android:textColor="#97A2B0"
                 android:textSize="13sp"
                 app:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -114,12 +84,50 @@
                 android:id="@+id/timeImage"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:src="@drawable/ic_icon_time"
+                android:src="@drawable/ic_icon_time_2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_icon_time" />
+                app:srcCompat="@drawable/ic_icon_time_2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/recipeKcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="14dp"
+                android:foreground="?android:selectableItemBackground"
+                android:letterSpacing="0.02"
+                android:text="120 Kcal"
+                android:textColor="#97A2B0"
+                android:textSize="13sp"
+                app:fontFamily="@font/montserrat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/timeImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/timeImage"
+                android:layout_width="15dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="14dp"
+                android:src="@drawable/ic_icon_time_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icon_calories" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

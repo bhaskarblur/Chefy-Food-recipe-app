@@ -32,8 +32,8 @@ public class loginAsk extends AppCompatActivity {
         loggedIn= loginCheck.getString("loggedIn","");
         if(loggedIn.equals("yes")) {
             Intent intent=new Intent(loginAsk.this,mainActivity.class);
-            finish();
             startActivity(intent);
+            finish();
             overridePendingTransition(R.anim.fade_2,R.anim.fade);
         }
         viewFunc();
