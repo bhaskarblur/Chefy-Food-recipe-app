@@ -10,6 +10,7 @@
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/bottom_button.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/cook_button.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/custom_progressbar.xml" value="0.2635" />
+        <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/filter_card.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/heart_button.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_icon_android.xml" value="0.196" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_icon_android_2.xml" value="0.2875" />
@@ -48,8 +49,9 @@
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/featured_layout.xml" value="0.67" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/features_layout.xml" value="0.30012825994014536" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/fragment_notification.xml" value="0.33" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/fragment_onboarding_frag.xml" value="0.25" />
-        <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/fragment_search.xml" value="0.5" />
+        <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/fragment_search.xml" value="0.33" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/interest_layout.xml" value="0.33" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/recipe_layout.xml" value="0.67" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/recipe_layout_horizontal.xml" value="0.5" />

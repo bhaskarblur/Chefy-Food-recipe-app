@@ -73,6 +73,7 @@ public class mainActivity extends AppCompatActivity {
 
             }
         });
+
         binding.homelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,11 +141,11 @@ public class mainActivity extends AppCompatActivity {
                 // Picasso.get().load(R.drawable.ic_profile).into(binding.profileIcon);
                 binding.profileIcon.setImageResource(R.drawable.ic_profile_notselected);
 
-              //  savednewsFragment homeFragment=new savednewsFragment();
-              //  FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-               // transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
-               // transaction.replace(R.id.mainFragment, homeFragment);
-             //   transaction.commit();
+                notificationFragment homeFragment=new notificationFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
+                transaction.replace(R.id.mainFragment, homeFragment);
+                transaction.commit();
             }
         });
 
@@ -194,8 +195,8 @@ public class mainActivity extends AppCompatActivity {
     }
 
     public void setAlphaAnimation2(View v) {
-        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(v, "scaleX", 1f, 0f);
-        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(v, "scaleX", 0f, 1f);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(v, "alpha", 1f, 0f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(v, "alpha", 0f, 1f);
         oa1.setInterpolator(new DecelerateInterpolator());
         oa1.setDuration(150);
         oa2.setDuration(150);
@@ -209,13 +210,13 @@ public class mainActivity extends AppCompatActivity {
                 oa2.start();
 
                 Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.fade_2);
+                        R.anim.fade_fast_2);
 
                 Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.fade);
+                        R.anim.fade_fast);
 
                 binding.chefDialogButtons.startAnimation(slide_up);
-
+                binding.chefDialog.startAnimation(slide_up);
 
             }
         });
@@ -229,8 +230,8 @@ public class mainActivity extends AppCompatActivity {
 
     }
     public void setAlphaAnimation3(View v) {
-        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(v, "scaleX", 1f, 0f);
-        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(v, "scaleX", 0f, 1f);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(v, "alpha", 1f, 0f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(v, "alpha", 0f, 1f);
         oa1.setInterpolator(new DecelerateInterpolator());
         oa1.setDuration(150);
         oa2.setDuration(150);
@@ -244,13 +245,14 @@ public class mainActivity extends AppCompatActivity {
                 oa2.start();
                 binding.chefDialog.setVisibility(View.VISIBLE);
                 Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.fade_2);
+                        R.anim.fade_fast_2);
 
                 Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.fade);
+                        R.anim.fade_fast);
 
 
                 binding.chefDialogButtons.startAnimation(slide_down);
+                binding.chefDialog.startAnimation(slide_down);
 
             }
         });
@@ -277,11 +279,11 @@ public class mainActivity extends AppCompatActivity {
                 // Picasso.get().load(R.drawable.ic_profile).into(binding.profileIcon);
                 binding.profileIcon.setImageResource(R.drawable.ic_profile_notselected);
 
-             //   homeFragment homeFragment=new homeFragment();
-              //  FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-              //  transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
-              //  transaction.replace(R.id.mainFragment, homeFragment);
-               // transaction.commit();
+                homeFragment homeFragment=new homeFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.fade_2, R.anim.fade);
+                transaction.replace(R.id.mainFragment, homeFragment);
+                transaction.commit();
 
             }
         } else {

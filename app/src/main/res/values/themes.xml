@@ -16,6 +16,7 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
 
     </style>
+
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">34%</item>
