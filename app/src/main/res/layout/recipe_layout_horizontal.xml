@@ -10,6 +10,7 @@
     android:layout_marginRight="24dp"
     android:layout_marginBottom="14dp"
     android:clickable="true"
+    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp">
 
@@ -100,7 +101,6 @@
             android:elevation="0dp"
             android:foreground="?android:selectableItemBackground"
             android:paddingLeft="7dp"
-
             android:paddingTop="10dp"
             android:paddingRight="0dp"
             android:paddingBottom="10dp"

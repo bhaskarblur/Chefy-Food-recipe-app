@@ -54,6 +54,15 @@ public class mainActivity extends AppCompatActivity {
         transaction.commit();
 
         final Boolean[] cookOpened = {false};
+
+        binding.scanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mainActivity.this,scanActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+            }
+        });
         binding.cooklayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -309,4 +318,6 @@ public class mainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
 }
