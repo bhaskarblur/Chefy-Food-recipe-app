@@ -30,6 +30,7 @@
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_onboard_notselected.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_onboard_selected.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_sample_featuredfood.xml" value="0.2635" />
+        <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_scannerborder.xml" value="0.126" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_search_icon.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_selected.xml" value="0.2635" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/drawable/ic_sliderhandle.xml" value="0.2635" />
@@ -48,7 +49,7 @@
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_on_boarding.xml" value="0.18" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_prepare_planning.xml" value="0.4276729559748428" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_reset_password.xml" value="0.3009833262077811" />
-        <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_scan.xml" value="0.4013683010262258" />
+        <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_scan.xml" value="0.5" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_select_interest.xml" value="0.33" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_signin.xml" value="0.3009833262077811" />
         <entry key="..\:/StudioWork/Chefy/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />

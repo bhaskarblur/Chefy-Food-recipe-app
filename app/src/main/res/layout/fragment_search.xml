@@ -80,6 +80,23 @@
             android:textSize="15.5sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/searchLottie"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/search"
+        app:lottie_repeatCount="500" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/filterButton"
         android:layout_width="56dp"

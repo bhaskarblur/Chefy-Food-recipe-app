@@ -54,10 +54,10 @@ public class loginActivity extends AppCompatActivity {
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(loginActivity.this,enterOTP.class);
-                Bundle bundle=new Bundle();
-                bundle.putString("action","login");
-                intent.putExtras(bundle);
+                Intent intent=new Intent(loginActivity.this,mainActivity.class);
+               // Bundle bundle=new Bundle();
+                //bundle.putString("action","login");
+               // intent.putExtras(bundle);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_2,R.anim.fade);
             }

@@ -19,18 +19,37 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/scannerBorder"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002"
-        app:srcCompat="@drawable/scannerimage" />
+        app:layout_constraintVertical_bias="0.419"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/scan_anim"
+        app:lottie_repeatCount="100"
+        app:srcCompat="@drawable/ic_scannerborder" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/scannerLottie"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/scan_anim"
+        app:lottie_repeatCount="500" />
 
     <TextView
         android:id="@+id/laterText6"
@@ -121,6 +140,20 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:targetApi="n_mr1">
 
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/backgroundGreen"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/notificationHead"
                 android:layout_width="0dp"
@@ -193,6 +226,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
