@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recipe_card"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="2dp"
     android:layout_marginLeft="3dp"
+    android:layout_marginTop="2dp"
     android:layout_marginRight="3dp"
     android:layout_marginBottom="14dp"
     android:clickable="true"
@@ -16,31 +16,34 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recipe_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="76dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="1dp"
         android:background="@color/white"
         android:clickable="true"
         tools:targetApi="n_mr1">
 
         <TextView
-            android:id="@+id/ingredientText"
-            android:layout_width="wrap_content"
+            android:id="@+id/stepText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
-            android:layout_marginEnd="18dp"
-            android:fontFamily="@font/montserrat_medium"
-            android:letterSpacing="0.01"
-            android:singleLine="true"
-            android:text="Tortilla Chips"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing="0.02"
+            android:lineHeight="20dp"
+            android:text="Bake the tortilla strips: Coat a baking sheet with nonstick spray. Cut the tortillas into strips, drizzle with oil, and sprinkle with salt and pepper. Toss to coat, and bake at 425 degrees F until golden"
             android:textAlignment="viewStart"
-            android:textColor="@color/textBlack"
+            android:textColor="#48525F"
             android:textSize="15.5sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/notificationImageBg"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout6"
@@ -53,28 +56,31 @@
 
         <ImageView
             android:id="@+id/notificationImageBg"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/bottom_button_2"
             app:tint="#E6EBF2"
             tools:srcCompat="@drawable/bottom_button_2" />
 
-        <ImageView
-            android:id="@+id/ingredientImage"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="22dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/stepNumber"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:letterSpacing="0.01"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/sample_foodimag"
-            tools:srcCompat="@drawable/sample_foodimag" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

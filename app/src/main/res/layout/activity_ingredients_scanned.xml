@@ -407,6 +407,8 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:clickable="true"
                     android:layout_marginBottom="4dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -417,8 +419,11 @@
                         android:id="@+id/tabBg1"
                         android:layout_width="175dp"
                         android:layout_height="match_parent"
+                        android:foreground="?android:selectableItemBackground"
                         android:scaleType="fitXY"
+                        android:clickable="true"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/bottom_button"
                         app:tint="@color/textBlack"
                         tools:srcCompat="@drawable/bottom_button" />
@@ -449,6 +454,8 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
                     android:layout_marginBottom="4dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -460,15 +467,17 @@
                         android:id="@+id/tabBg2"
                         android:layout_width="175dp"
                         android:layout_height="match_parent"
+                        android:foreground="?android:selectableItemBackground"
                         android:scaleType="fitXY"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:clickable="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/switchText2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="true"
-                        android:foreground="?android:selectableItemBackground"
+
                         android:letterSpacing="0.02"
                         android:text="Instructions"
                         android:textColor="@color/textBlack"
@@ -492,7 +501,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tabSwitch">
+                app:layout_constraintTop_toBottomOf="@+id/tabSwitch"
+                app:layout_constraintVertical_bias="0.0">
 
                 <TextView
                     android:id="@+id/textView3"
@@ -533,15 +543,100 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/itemsText"
                     tools:itemCount="4"
-                    tools:listitem="@layout/ingredients_layout" >
+                    tools:listitem="@layout/ingredients_layout">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/instructionsLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabSwitch"
+                app:layout_constraintVertical_bias="0.0">
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="Instructions"
+                    android:textColor="@color/textBlack"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/montserrat_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/stepsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="6 Steps"
+                    android:textColor="#748189"
+                    android:textSize="15.5sp"
+                    app:fontFamily="@font/montserrat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/instructionList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stepsText"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/instructions_layout">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/additionalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientLayout">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cookButton"
+                    app:srcCompat="@drawable/ic_sliderhandle" />
+
                 <Button
-                    android:id="@+id/loginButton2"
+                    android:id="@+id/cookButton"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
                     android:background="@drawable/onboarding_button"
                     android:fontFamily="@font/montserrat_semibold"
                     android:foreground="?android:selectableItemBackground"
@@ -552,24 +647,54 @@
                     android:textSize="17sp"
                     app:backgroundTint="@color/backgroundGreen"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ingredientList" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="0dp"
-                    android:layout_height="1.5dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginBottom="20dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/loginButton2"
-                    app:srcCompat="@drawable/ic_sliderhandle" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/additionalLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="40dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructionsLayout">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cookButton2"
+                    app:srcCompat="@drawable/ic_sliderhandle" />
+
+                <Button
+                    android:id="@+id/cookButton2"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/onboarding_button"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="Start Cooking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:backgroundTint="@color/backgroundGreen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
