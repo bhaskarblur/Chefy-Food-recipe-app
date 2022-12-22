@@ -183,7 +183,6 @@ public class CameraConnectionFragment extends Fragment {
   //  }
 
     public CameraConnectionFragment() {
-        this.inputSize=new Size(1080,1920);
         this.layout= R.layout.fragment_cameraconnection;
     }
 

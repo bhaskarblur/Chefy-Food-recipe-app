@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
+import android.content.ClipData;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,20 +18,26 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.media.Image;
 import android.media.ImageReader;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 import com.the2wizstudio.chefy.databinding.ActivityScanBinding;
 
 import java.nio.ByteBuffer;
 
 public class scanActivity extends AppCompatActivity implements cameraInterface, ImageReader.OnImageAvailableListener {
     ActivityScanBinding binding;
+    final int IMAGE_PICK_CODE = 1000;
+    final int PERMISSION_CODE = 1001;
+    final int PERMISSION_CODE2 = 1002;
     private boolean isProcessingFrame = false;
     private byte[][] yuvBytes = new byte[3][];
     private int[] rgbBytes = null;
@@ -51,7 +60,7 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED ) {
                 ActivityCompat.requestPermissions(this, new String[]{
-                        android.Manifest.permission.CAMERA}, 121);
+                        android.Manifest.permission.CAMERA}, PERMISSION_CODE);
             }else{
                 //TODO show live camera footage
                 setFragment();
@@ -79,11 +88,11 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
         binding.imagePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 101);
+              // Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+             //   intent.setType("image/*");
+            //    intent.setAction(Intent.ACTION_GET_CONTENT);
+              //  startActivityForResult(Intent.createChooser(intent, "Select Picture"), IMAGE_PICK_CODE);
+                startCropActivity();
             }
         });
     }
@@ -134,10 +143,10 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
     }
 
     public static int getScreenWidth() {
-        return Resources.getSystem().getDisplayMetrics().widthPixels;
+        return 1920;
     }
     public static int getScreenHeight() {
-        return Resources.getSystem().getDisplayMetrics().heightPixels;
+        return 1080;
     }
 
     @Override
@@ -221,18 +230,6 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
             buffer.get(yuvBytes[i]);
         }
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        //TODO show live camera footage
-        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            //TODO show live camera footage
-            setFragment();
-
-        } else {
-            Toast.makeText(this, "Error opening camera.", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
@@ -242,8 +239,59 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 101) {
-            //TODO: action
+        if (requestCode == IMAGE_PICK_CODE && resultCode==RESULT_OK) {;
+                Uri imageURi=data.getData();
+                Picasso.get().load(imageURi).into(binding.imageView);
+        }
+    }
+    private void startCropActivity() {
+        if(ActivityCompat.checkSelfPermission(scanActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                !=PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(scanActivity.this,new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
+            return;
+        }
+
+        Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+       // intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
+        intent.setType("image/*");
+        startActivityForResult(intent,IMAGE_PICK_CODE);
+
+
+    }
+
+    private String getFileExtension(Uri uri) {
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(uri));
+    }
+
+    private void pickImageFromGallery() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, PERMISSION_CODE2);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case PERMISSION_CODE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                   setFragment();
+                }
+                else {
+                    Toast.makeText(scanActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+                }
+            }
+            case PERMISSION_CODE2: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    startCropActivity();
+                } else {
+                    Toast.makeText(scanActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+
         }
     }
 
