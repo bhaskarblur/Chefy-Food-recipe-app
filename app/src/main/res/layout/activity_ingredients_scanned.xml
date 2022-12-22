@@ -283,7 +283,7 @@
                 android:id="@+id/constraintLayout8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
+                android:layout_marginStart="38dp"
                 android:layout_marginTop="18dp"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
                 app:layout_constraintTop_toBottomOf="@+id/recipeDescmore">
@@ -333,7 +333,7 @@
                 android:id="@+id/constraintLayout10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
+                android:layout_marginStart="38dp"
                 android:layout_marginTop="18dp"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
@@ -401,13 +401,30 @@
                     app:tint="#E6EBF2"
                     tools:srcCompat="@drawable/bottom_button" />
 
+                <ImageView
+                    android:id="@+id/tabBg3"
+                    android:layout_width="175dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:srcCompat="@drawable/bottom_button"
+                    app:tint="@color/textBlack"
+                    tools:srcCompat="@drawable/bottom_button" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ingredientSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
-                    android:foreground="?android:selectableItemBackground"
                     android:clickable="true"
                     android:layout_marginBottom="4dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -419,7 +436,6 @@
                         android:id="@+id/tabBg1"
                         android:layout_width="175dp"
                         android:layout_height="match_parent"
-                        android:foreground="?android:selectableItemBackground"
                         android:scaleType="fitXY"
                         android:clickable="true"
                         app:layout_constraintStart_toStartOf="parent"
@@ -432,7 +448,6 @@
                         android:id="@+id/switchText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="true"
                         android:foreground="?android:selectableItemBackground"
                         android:letterSpacing="0.02"
                         android:text="Ingredients"
@@ -455,7 +470,6 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="4dp"
                     android:clickable="true"
-                    android:foreground="?android:selectableItemBackground"
                     android:layout_marginBottom="4dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -467,17 +481,18 @@
                         android:id="@+id/tabBg2"
                         android:layout_width="175dp"
                         android:layout_height="match_parent"
-                        android:foreground="?android:selectableItemBackground"
                         android:scaleType="fitXY"
-                        android:clickable="true"
+                        android:visibility="invisible"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bottom_button"
+                        app:tint="@color/textBlack"
+                        tools:srcCompat="@drawable/bottom_button" />
 
                     <TextView
                         android:id="@+id/switchText2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:letterSpacing="0.02"
                         android:text="Instructions"
                         android:textColor="@color/textBlack"
@@ -618,19 +633,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ingredientLayout">
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="0dp"
-                    android:layout_height="1.5dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="24dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cookButton"
-                    app:srcCompat="@drawable/ic_sliderhandle" />
-
                 <Button
                     android:id="@+id/cookButton"
                     android:layout_width="0dp"
@@ -649,6 +651,132 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cookButton"
+                    app:srcCompat="@drawable/ic_sliderhandle" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="Creator"
+                    android:textColor="@color/textBlack"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/montserrat_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                <ImageView
+                    android:id="@+id/creatorImage1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bottom_button_round"
+                    android:padding="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    app:srcCompat="@drawable/sample_avatar" />
+
+                <TextView
+                    android:id="@+id/creatorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="14dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="Natalia Luca"
+                    android:textColor="@color/textBlack"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/montserrat"
+                    app:layout_constraintStart_toEndOf="@+id/creatorImage1"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/creatorDescr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="2dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="I'm the author and recipe developer."
+                    android:textColor="#48525F"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/montserrat"
+                    app:layout_constraintStart_toEndOf="@+id/creatorImage1"
+                    app:layout_constraintTop_toBottomOf="@+id/creatorName" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/recipeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/creatorDescr">
+
+                    <TextView
+                        android:id="@+id/recipeHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:foreground="?android:selectableItemBackground"
+                        android:letterSpacing="0.02"
+                        android:text="Related Recipes"
+                        android:textColor="@color/textBlack"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/montserrat_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/recipeseeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="22dp"
+                        android:clickable="true"
+                        android:foreground="?android:selectableItemBackground"
+                        android:letterSpacing="0.02"
+                        android:text="See all"
+                        android:textColor="@color/backgroundGreen"
+                        android:textSize="15sp"
+                        app:fontFamily="@font/montserrat_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recipeList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recipeHead"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/recipe_layout_small" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -662,19 +790,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/instructionsLayout">
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="0dp"
-                    android:layout_height="1.5dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="24dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cookButton2"
-                    app:srcCompat="@drawable/ic_sliderhandle" />
 
                 <Button
                     android:id="@+id/cookButton2"
@@ -694,6 +809,131 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cookButton2"
+                    app:srcCompat="@drawable/ic_sliderhandle" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="Creator"
+                    android:textColor="@color/textBlack"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/montserrat_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                <ImageView
+                    android:id="@+id/creatorImage"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bottom_button_round"
+                    android:padding="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    app:srcCompat="@drawable/sample_avatar" />
+
+                <TextView
+                    android:id="@+id/creatorName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="14dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="Natalia Luca"
+                    android:textColor="@color/textBlack"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/montserrat"
+                    app:layout_constraintStart_toEndOf="@+id/creatorImage"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/creatorDescr2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="2dp"
+                    android:clickable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:letterSpacing="0.02"
+                    android:text="I'm the author and recipe developer."
+                    android:textColor="#48525F"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/montserrat"
+                    app:layout_constraintStart_toEndOf="@+id/creatorImage"
+                    app:layout_constraintTop_toBottomOf="@+id/creatorName2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/recipeLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/creatorDescr2">
+
+                    <TextView
+                        android:id="@+id/recipeHead2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:foreground="?android:selectableItemBackground"
+                        android:letterSpacing="0.02"
+                        android:text="Related Recipes"
+                        android:textColor="@color/textBlack"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/montserrat_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/recipeseeAll2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="22dp"
+                        android:clickable="true"
+                        android:foreground="?android:selectableItemBackground"
+                        android:letterSpacing="0.02"
+                        android:text="See all"
+                        android:textColor="@color/backgroundGreen"
+                        android:textSize="15sp"
+                        app:fontFamily="@font/montserrat_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recipeList2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recipeHead2"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/recipe_layout_small" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

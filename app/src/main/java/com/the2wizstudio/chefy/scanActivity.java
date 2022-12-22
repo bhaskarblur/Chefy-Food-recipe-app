@@ -72,6 +72,7 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
             public void onClick(View view) {
                 Intent intent=new Intent(scanActivity.this,IngredientsScanned.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
             }
         });
     }
