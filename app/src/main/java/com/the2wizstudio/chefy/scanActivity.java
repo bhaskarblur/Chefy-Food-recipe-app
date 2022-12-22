@@ -75,7 +75,20 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
             }
         });
+
+        binding.imagePickerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 101);
+            }
+        });
     }
+
+
 
     int previewHeight = 0,previewWidth = 0;
     int sensorOrientation;
@@ -226,10 +239,19 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
         super.onPointerCaptureChanged(hasCapture);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 101) {
+            //TODO: action
+        }
+    }
 
     @Override
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.fade_2,R.anim.fade);
     }
+
+
 }
