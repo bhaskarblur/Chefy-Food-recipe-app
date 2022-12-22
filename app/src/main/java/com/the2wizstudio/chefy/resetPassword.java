@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -40,6 +41,14 @@ public class resetPassword extends AppCompatActivity {
         binding.pass2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         binding.pass.setTransformationMethod(new MyPasswordTransformationMethod());
         binding.pass2.setTransformationMethod(new MyPasswordTransformationMethod());
+        Typeface typeface = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            typeface = getResources().getFont(R.font.montserrat);
+            binding.pass.setHint("Enter Password");
+            binding.passField.setPlaceholderText(null);
+            binding.pass2.setHint("Enter Password Again");
+            binding.passField2.setPlaceholderText(null);
+        }
         binding.pass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

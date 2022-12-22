@@ -71,6 +71,10 @@ public class preparePlanning extends AppCompatActivity {
                         SharedPreferences.Editor editor=sharedPreferences.edit();
                         editor.putString("onbdone","yes");
                         editor.commit();
+                      SharedPreferences sharedPreferences2= getSharedPreferences("loginCheck",0);
+                      SharedPreferences.Editor editor2=sharedPreferences2.edit();
+                      editor2.putString("loggedIn","yes");
+                      editor2.commit();
                       Intent intent=new Intent(preparePlanning.this,mainActivity.class);
                       finish();
                       startActivity(intent);

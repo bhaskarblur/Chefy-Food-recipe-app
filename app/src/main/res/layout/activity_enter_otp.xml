@@ -77,7 +77,6 @@
                 android:background="@drawable/onboarding_button"
                 android:fontFamily="@font/montserrat_semibold"
                 android:foreground="?android:selectableItemBackground"
-
                 android:letterSpacing="0.02"
                 android:text="Confirm"
                 android:textAllCaps="false"

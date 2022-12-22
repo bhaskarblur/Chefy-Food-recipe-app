@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Toast;
 
 import com.the2wizstudio.chefy.databinding.ActivityLoginBinding;
 
@@ -33,8 +34,16 @@ public class loginActivity extends AppCompatActivity {
 
 
     private void viewFunc() {
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.montserrat_medium);
-        binding.phone.setTypeface(typeface);
+        Typeface typeface = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            typeface = getResources().getFont(R.font.montserrat);
+            binding.phoneField.setTypeface(typeface);
+            binding.phone.setHint("Enter Phone Number");
+            binding.phoneField.setPlaceholderText(null);
+            binding.pass.setHint("Enter Password");
+            binding.passField.setPlaceholderText(null);
+        }
+
         binding.pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         binding.pass.setTransformationMethod(new MyPasswordTransformationMethod());
         binding.backIcon.setOnClickListener(new View.OnClickListener() {

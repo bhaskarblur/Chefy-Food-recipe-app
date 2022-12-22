@@ -41,6 +41,20 @@ public class createAccount extends AppCompatActivity {
     }
 
     private void ManageUI() {
+        Typeface typeface = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            typeface = getResources().getFont(R.font.montserrat);
+            binding.phoneField.setTypeface(typeface);
+            binding.phone.setHint("Enter Phone Number");
+            binding.phoneField.setPlaceholderText(null);
+            binding.pass.setHint("Enter Password");
+            binding.passField.setPlaceholderText(null);
+            binding.username.setHint("Enter Username");
+            binding.usernameField.setPlaceholderText(null);
+            binding.firstname.setHint("Enter First name");
+            binding.firstnameField.setPlaceholderText(null);
+        }
+
         binding.pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         binding.pass.setTransformationMethod(new MyPasswordTransformationMethod());
         Typeface font = ResourcesCompat.getFont(this, R.font.montserrat);
