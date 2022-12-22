@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputFilter;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
@@ -38,7 +39,7 @@ public class IngredientsScanned extends AppCompatActivity {
             public void onClick(View view) {
                 if(switchSide[0] ==false) {
                     TranslateAnimation animation1 = new TranslateAnimation(0.0f, 450.0f, 0.0f, 0.0f); // new TranslateAnimation(xFrom,xTo, yFrom,yTo)
-                    animation1.setDuration(200); // animation duration
+                    animation1.setDuration(140); // animation duration
                     animation1.setFillAfter(false);
                     binding.tabBg3.setVisibility(View.VISIBLE);
                     binding.tabBg1.setVisibility(View.INVISIBLE);
@@ -56,7 +57,7 @@ public class IngredientsScanned extends AppCompatActivity {
                             binding.instructionsLayout.setVisibility(View.VISIBLE);
                             binding.additionalLayout2.setVisibility(View.VISIBLE);
                         }
-                    }, 150);
+                    }, 110);
 
                     switchSide[0] =true;
                 }
@@ -68,7 +69,7 @@ public class IngredientsScanned extends AppCompatActivity {
             public void onClick(View view) {
                 if(switchSide[0] ==true) {
                     TranslateAnimation animation1 = new TranslateAnimation(450.0f, 0.0f, 0.0f, 0.0f); // new TranslateAnimation(xFrom,xTo, yFrom,yTo)
-                    animation1.setDuration(200); // animation duration
+                    animation1.setDuration(140); // animation duration
                     animation1.setFillAfter(false);
                     binding.tabBg3.setVisibility(View.VISIBLE);
                     binding.tabBg1.setVisibility(View.INVISIBLE);
@@ -86,7 +87,7 @@ public class IngredientsScanned extends AppCompatActivity {
                             binding.ingredientLayout.setVisibility(View.VISIBLE);
                             binding.additionalLayout.setVisibility(View.VISIBLE);
                         }
-                    }, 150);
+                    }, 110);
 
                     switchSide[0] =false;
                 }
@@ -96,10 +97,28 @@ public class IngredientsScanned extends AppCompatActivity {
     }
 
     private void viewFunc() {
+        String desc="This Healthy Taco Salad is the universal delight of taco night Bake the tortilla " +
+                "strips: Coat a baking sheet with nonstick spray. Cut the tortillas into strips, " +
+                "drizzle with oil, and sprinkle with salt and pepper. Toss to coat, and bake at 425 degrees " +
+                "F until goldenBake the tortilla strips: Coat a baking sheet with nonstick spray. Cut the " +
+                "tortillas into strips, drizzle with oil, and sprinkle with salt and pepper. Toss to coat," +
+                " and bake at 425 degrees F until goldenBake the tortilla strips: Coat a baking sheet with " +
+                "nonstick spray. Cut the tortillas into strips, drizzle ";
+
+        binding.recipeDescription.setText(desc.substring(0,68));
+
         binding.closeButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        binding.recipeDescmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.recipeDescription.setText(desc.substring(0,desc.length()));
+                binding.recipeDescmore.setVisibility(View.INVISIBLE);
             }
         });
     }

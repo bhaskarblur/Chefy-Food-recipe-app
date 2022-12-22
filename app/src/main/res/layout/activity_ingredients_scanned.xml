@@ -59,6 +59,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sample_food" />
 
+    <ImageView
+        android:id="@+id/shadowImage"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_shadow" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -148,12 +158,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
                 android:foreground="?android:selectableItemBackground"
                 android:letterSpacing="0.02"
                 android:lineHeight="20dp"
-                android:text="This Healthy Taco Salad is the universal delight of taco night"
+                android:text="This Healthy Taco Salad is the universal delight of taco night Bake the tortilla strips: Coat a baking sheet with nonstick spray. Cut the tortillas into strips, drizzle with oil, and sprinkle with salt and pepper. Toss to coat, and bake at 425 degrees F until goldenBake the tortilla strips: Coat a baking sheet with nonstick spray. Cut the tortillas into strips, drizzle with oil, and sprinkle with salt and pepper. Toss to coat, and bake at 425 degrees F until goldenBake the tortilla strips: Coat a baking sheet with nonstick spray. Cut the tortillas into strips, drizzle "
                 android:textColor="#97A2B0"
                 android:textSize="14.5sp"
                 app:fontFamily="@font/montserrat"
@@ -165,7 +175,7 @@
                 android:id="@+id/recipeDescmore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="29dp"
                 android:layout_marginEnd="24dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground"
@@ -283,10 +293,10 @@
                 android:id="@+id/constraintLayout8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="38dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="18dp"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
-                app:layout_constraintTop_toBottomOf="@+id/recipeDescmore">
+                app:layout_constraintTop_toBottomOf="@+id/recipeDescription">
 
                 <ImageView
                     android:id="@+id/imageBg2"
@@ -333,7 +343,7 @@
                 android:id="@+id/constraintLayout10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="38dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="18dp"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">

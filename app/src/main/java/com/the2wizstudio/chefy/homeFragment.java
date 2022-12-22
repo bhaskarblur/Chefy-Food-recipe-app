@@ -7,6 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.the2wizstudio.chefy.databinding.FragmentHomeBinding;
+
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,8 +23,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class homeFragment extends Fragment {
-
-
+    FragmentHomeBinding binding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -49,6 +57,33 @@ public class homeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        binding=FragmentHomeBinding.inflate(inflater,container,false);
+        
+        viewFunc();
+        manageViews();
+        return binding.getRoot();
+    }
+
+    private void manageViews() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH", Locale.getDefault());
+        String currentTime = sdf.format(new Date());
+        if(Integer.parseInt(currentTime)>17) {
+            binding.timeText.setText("Good Evening");
+
+        }
+        else if(Integer.parseInt(currentTime)>13 && Integer.parseInt(currentTime)<17) {
+            binding.timeText.setText("Good Afternoon");
+        }
+        else if(Integer.parseInt(currentTime)<13) {
+            binding.timeText.setText("Good Morning");
+        }
+        else if(Integer.parseInt(currentTime)>21) {
+            binding.timeText.setText("Good Night");
+        }
+
+    }
+
+    private void viewFunc() {
+
     }
 }
