@@ -71,10 +71,10 @@ public class homeFragment extends Fragment {
             binding.timeText.setText("Good Evening");
 
         }
-        else if(Integer.parseInt(currentTime)>13 && Integer.parseInt(currentTime)<17) {
+        else if(Integer.parseInt(currentTime)>=12 && Integer.parseInt(currentTime)<17) {
             binding.timeText.setText("Good Afternoon");
         }
-        else if(Integer.parseInt(currentTime)<13) {
+        else if(Integer.parseInt(currentTime)<12) {
             binding.timeText.setText("Good Morning");
         }
         else if(Integer.parseInt(currentTime)>21) {

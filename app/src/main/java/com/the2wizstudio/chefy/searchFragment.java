@@ -1,5 +1,6 @@
 package com.the2wizstudio.chefy;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.the2wizstudio.chefy.databinding.FragmentSearchBinding;
+
 
 public class searchFragment extends Fragment {
 
@@ -15,7 +18,7 @@ public class searchFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private FragmentSearchBinding binding;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -47,7 +50,18 @@ public class searchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+       binding=FragmentSearchBinding.inflate(inflater,container,false);
+
+       viewFunc();
+        return binding.getRoot();
+    }
+
+    private void viewFunc() {
+        Typeface typeface=null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            typeface = getResources().getFont(R.font.montserrat);
+            binding.search.setHint("Search");
+            binding.searchField.setPlaceholderText(null);
+        }
     }
 }

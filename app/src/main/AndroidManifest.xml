@@ -40,7 +40,7 @@
             android:name=".mainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".selectInterest"
             android:exported="false"
