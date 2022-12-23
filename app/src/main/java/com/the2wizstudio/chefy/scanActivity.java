@@ -285,7 +285,6 @@ public class scanActivity extends AppCompatActivity implements cameraInterface, 
             }
             case PERMISSION_CODE2: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    startCropActivity();
                 } else {
                     Toast.makeText(scanActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
                 }
